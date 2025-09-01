@@ -60,7 +60,7 @@ UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 UPDATE_PACKAGE "mosdns" "sbwml/luci-app-mosdns" "v5" "" "v2dat"
 UPDATE_PACKAGE "qmodem" "FUjr/QModem" "main"
 UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
-UPDATE_PACKAGE "luci-app-store" "linkease/istore" "main"
+#UPDATE_PACKAGE "luci-app-store" "linkease/istore" "main"
 
 #更新软件包版本
 UPDATE_VERSION() {
