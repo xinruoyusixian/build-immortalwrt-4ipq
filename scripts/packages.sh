@@ -1,12 +1,20 @@
 #!/bin/bash
 
+# --------------  1. 进入 openwrt 目录  --------------
+cd openwrt || exit 1
 
-# -------------- istore feed --------------
-echo "src-git istore https://github.com/linkease/istore.git" >> feeds.conf.default
+# --------------  2. 把 istore 加为 feed  --------------
+grep -q '^src-git istore' feeds.conf.default 2>/dev/null || \
+  echo "src-git istore https://github.com/linkease/istore.git" >> feeds.conf.default
+
 ./scripts/feeds update istore
 ./scripts/feeds install -a -p istore
+
+# --------------  3. 选中必须的包  --------------
 echo -e "CONFIG_PACKAGE_luci-app-store=y\nCONFIG_PACKAGE_istore=y" >> .config
-# -----------------------------------------
+
+# --------------  4. 回到上一层，继续原有逻辑  --------------
+cd ..
 
 #安装和更新软件包
 UPDATE_PACKAGE() {
