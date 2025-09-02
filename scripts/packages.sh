@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+# -------------- istore feed --------------
+echo "src-git istore https://github.com/linkease/istore.git" >> feeds.conf.default
+./scripts/feeds update istore
+./scripts/feeds install -a -p istore
+echo -e "CONFIG_PACKAGE_luci-app-store=y\nCONFIG_PACKAGE_istore=y" >> .config
+# -----------------------------------------
+
 #安装和更新软件包
 UPDATE_PACKAGE() {
 	local PKG_NAME=$1
@@ -60,7 +68,6 @@ UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 UPDATE_PACKAGE "mosdns" "sbwml/luci-app-mosdns" "v5" "" "v2dat"
 UPDATE_PACKAGE "qmodem" "FUjr/QModem" "main"
 UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
-#UPDATE_PACKAGE "luci-app-store" "linkease/istore" "main"
 
 #更新软件包版本
 UPDATE_VERSION() {
