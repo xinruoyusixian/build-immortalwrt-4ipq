@@ -166,7 +166,36 @@ jobs:
           $GITHUB_WORKSPACE/scripts/settings.sh
 
           make defconfig -j$(nproc) && make clean -j$(nproc)
+      - name: Update Feeds
+        run: |
+          cd ./wrt/
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+      
+      # 新增：添加 iStore Feed
+      - name: Add iStore Feed
+        run: |
+          cd ./wrt/
+          
+          # 添加 iStore feed 源
+          if ! grep -q "istore" feeds.conf.default; then
+              echo "src-git istore https://github.com/linkease/istore.git;main" >> feeds.conf.default
+              echo "已添加 iStore feed 源"
+          else
+              echo "iStore feed 源已存在"
+          fi
+          
+          # 更新并安装 iStore feed
+          ./scripts/feeds update istore
+          ./scripts/feeds install -a -p istore
+      
+      - name: Custom Packages
+        run: |
+          cd ./wrt/package/
+          $GITHUB_WORKSPACE/scripts/packages.sh
+          $GITHUB_WORKSPACE/scripts/handles.sh
 
+    
       - name: Download Packages
         if: env.WRT_TEST != 'true'
         run: |
