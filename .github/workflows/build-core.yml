@@ -179,7 +179,7 @@ jobs:
           
           # 添加 iStore feed 源
           if ! grep -q "istore" feeds.conf.default; then
-              echo "src-git istore https://github.com/sirpdboy/luci-app-store.git;master" >> feeds.conf.default
+              echo "src-git istore https://github.com/sirpdboy/luci-app-store.git" >> feeds.conf.default
               echo "已添加 iStore feed 源"
           else
               echo "iStore feed 源已存在"
