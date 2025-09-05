@@ -172,21 +172,18 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       
-      # 新增：添加 iStore Feed
       - name: Add iStore Feed
         run: |
           cd ./wrt/
-          
-          # 添加 iStore feed 源
-          if ! grep -q "istore" feeds.conf.default; then
-              echo "src-git istore https://github.com/linkease/istore.git" >> feeds.conf.default
-              echo "src-git quickstart https://github.com/linkease/luci-app-quickstart.git" >> feeds.conf.default
-              echo "已添加 iStore feed 源"
-          else
-              echo "iStore feed 源已存在"
-          fi
-          ./scripts/feeds update -a
-          ./scripts/feeds install -a
+          sed -i '/istore/d' feeds.conf.default
+          echo "src-git istore https://github.com/linkease/istore;main" >> feeds.conf.default
+      
+      - name: Update and install iStore feed
+        run: |
+          cd ./wrt/
+          ./scripts/feeds update istore
+          ./scripts/feeds install -d y -p istore luci-app-store
+          ./scripts/feeds install luci-compat
           
 
       - name: Custom Packages
