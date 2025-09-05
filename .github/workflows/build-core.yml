@@ -185,13 +185,10 @@ jobs:
           else
               echo "iStore feed 源已存在"
           fi
-          
-      # 更新并安装 iStore feed    
-      - name: Update and install feeds
-        run: |
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           
+
       - name: Custom Packages
         run: |
           cd ./wrt/package/
