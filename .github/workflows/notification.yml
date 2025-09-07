@@ -1,21 +1,19 @@
 name: Test PushPlus Notification
 
+#CI计划
 on:
-  workflow_dispatch: # 仅手动触发
+  #自动编译：当Auto-Clean运行完成后
+  workflow_run:
+    workflows: ["build-all"]
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
-  test:
+  core:
     runs-on: ubuntu-latest
     steps:
-      - name: Set Test Data
-        id: set-data
-        run: |
-          echo "WRT_CONFIG=IPQ60XX-WIFI" >> $GITHUB_ENV
-          echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")" >> $GITHUB_ENV
-          echo "WRT_HASH=abcdefg" >> $GITHUB_ENV
-          
       - name: PushPlus Notification
-        if: always()  # 无论成功失败都通知
         env:
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
           PUSHPLUS_TOPIC: ${{ secrets.PUSHPLUS_TOPIC }}
@@ -29,9 +27,9 @@ jobs:
             DETAIL="请检查工作流日志"
           fi
           
-          #CONFIG="${{ env.WRT_CONFIG }}"
-          #DATE="${{ env.WRT_DATE }}"
-          #RUN_URL="https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          CONFIG="${{ env.WRT_CONFIG }}"
+          DATE="${{ env.WRT_DATE }}"
+          RUN_URL="https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           
           # 构建JSON数据
           JSON_DATA=$(cat <<EOF
@@ -39,7 +37,7 @@ jobs:
             "token": "$PUSHPLUS_TOKEN",
             "topic": "$PUSHPLUS_TOPIC",
             "title": "GitHub编译通知",
-            "content": "编译完毕",
+            "content": "配置: $CONFIG<br>状态: $STATUS<br>时间: $DATE<br>详情: $DETAIL<br><a href=\"$RUN_URL\">查看运行详情</a>",
             "template": "html"
           }
           EOF
