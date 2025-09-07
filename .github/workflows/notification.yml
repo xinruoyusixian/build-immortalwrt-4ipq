@@ -1,4 +1,4 @@
-name: Test PushPlus Notification
+name: PushPlus Notification
 
 #CI计划
 on:
