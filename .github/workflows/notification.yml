@@ -1,0 +1,50 @@
+name: Test PushPlus Notification
+
+on:
+  workflow_dispatch: # 仅手动触发
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Test Data
+        id: set-data
+        run: |
+          echo "WRT_CONFIG=IPQ60XX-WIFI" >> $GITHUB_ENV
+          echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")" >> $GITHUB_ENV
+          echo "WRT_HASH=abcdefg" >> $GITHUB_ENV
+          
+      - name: PushPlus Notification
+        if: always()  # 无论成功失败都通知
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          PUSHPLUS_TOPIC: ${{ secrets.PUSHPLUS_TOPIC }}
+        run: |
+          # 设置消息内容
+          if [ "${{ job.status }}" == 'success' ]; then
+            STATUS="✅ 编译成功"
+            DETAIL="固件已打包完成"
+          else
+            STATUS="❌ 编译失败"
+            DETAIL="请检查工作流日志"
+          fi
+          
+          #CONFIG="${{ env.WRT_CONFIG }}"
+          #DATE="${{ env.WRT_DATE }}"
+          #RUN_URL="https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          
+          # 构建JSON数据
+          JSON_DATA=$(cat <<EOF
+          {
+            "token": "$PUSHPLUS_TOKEN",
+            "topic": "$PUSHPLUS_TOPIC",
+            "title": "GitHub编译通知",
+            "content": "编译完毕",
+            "template": "html"
+          }
+          EOF
+          )
+          
+          # 发送通知
+          curl -X POST -H "Content-Type: application/json" -d "$JSON_DATA" http://www.pushplus.plus/send   
+          echo "通知已发送"
