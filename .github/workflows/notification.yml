@@ -44,5 +44,5 @@ jobs:
           )
           
           # 发送通知
-          curl -X POST -H "Content-Type: application/json" -d "$JSON_DATA" http://www.pushplus.plus/send   
+          #curl -X POST -H "Content-Type: application/json" -d "$JSON_DATA" http://www.pushplus.plus/send   
           echo "通知已发送"
