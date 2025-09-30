@@ -1,3 +1,6 @@
+# source  https://github.com/kenzok8/small-package
+
+
 #diskman
 CONFIG_PACKAGE_luci-app-diskman=y
 #zerotier
