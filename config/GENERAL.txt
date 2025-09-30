@@ -9,9 +9,9 @@ CONFIG_PACKAGE_luci-app-wifischedule=y
 
 
 CONFIG_PACKAGE_luci-app-ddnsto=y
-CONFIG_PACKAGE_luci-app-unishare=y
+CONFIG_PACKAGE_luci-app-unishare=n
 CONFIG_PACKAGE_luci-app-timecontrol=y
-CONFIG_PACKAGE_luci-app-oaf=y
+CONFIG_PACKAGE_luci-app-oaf=n
 
 #流量监控
 CONFIG_PACKAGE_luci-app-wrtbwmon=y
@@ -31,7 +31,8 @@ CONFIG_PACKAGE_micropython-lib=y
 CONFIG_PACKAGE_luci-app-banip=y
 CONFIG_PACKAGE_luci-app-easytier=y
 CONFIG_PACKAGE_luci-app-mosdns=y
-CONFIG_PACKAGE_luci-app-netspeedtest=y
+
+CONFIG_PACKAGE_luci-app-netspeedtest=n
 
 # Mwan3
 #CONFIG_PACKAGE_mwan3=y
@@ -50,8 +51,8 @@ CONFIG_PACKAGE_luci-app-ramfree=y
 CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=y
 CONFIG_PACKAGE_luci-app-diskman=y
 
-CONFIG_PACKAGE_luci-i18n-filebrowser-go-zh-cn=y
-CONFIG_PACKAGE_luci-app-filebrowser-go=y
+CONFIG_PACKAGE_luci-i18n-filebrowser-go-zh-cn=n
+CONFIG_PACKAGE_luci-app-filebrowser-go=n
 
 #文件管理
 CONFIG_PACKAGE_luci-app-filemanager=y
@@ -61,13 +62,13 @@ CONFIG_PACKAGE_luci-i18n-filemanager-zh-cn=y
 
 
 #samba4
-#CONFIG_PACKAGE_luci-app-samba4=y
+CONFIG_PACKAGE_luci-app-samba4=y
 
 
 #增加插件
 CONFIG_PACKAGE_luci-app-autoreboot=y
 CONFIG_PACKAGE_luci-app-argon-config=y
-CONFIG_PACKAGE_luci-app-tailscale=y
+CONFIG_PACKAGE_luci-app-tailscale=n
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-upnp=y
 
