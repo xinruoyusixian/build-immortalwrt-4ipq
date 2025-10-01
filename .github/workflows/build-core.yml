@@ -154,6 +154,25 @@ jobs:
 
           ./scripts/feeds update -a
           ./scripts/feeds install -a
+
+      - name: 删除重复的包
+        run: |
+          set -euo pipefail
+          cd ./wrt
+
+          # 1. 按字母序扫描，先出现的留下，其余同名目录直接干掉
+          declare -A SEEN
+          while IFS= read -r -d '' pkg; do    # -0 防止空格
+            name=${pkg##*/}                   # 目录名 = 包名
+            if [[ -z ${SEEN[$name]:-} ]]; then
+              SEEN[$name]="$pkg"              # 记录第一次
+            else
+              echo "::warning::删除 Removing duplicate package '$name' => $pkg"
+              rm -rf "$pkg"
+            fi
+          done < <(find feeds -type d -name Makefile -print0 | xargs -0 dirname | sort -z)
+
+          echo "::notice::Feeds deduplication complete."
           
       - name: 删除可能得冲突包
         run: |
