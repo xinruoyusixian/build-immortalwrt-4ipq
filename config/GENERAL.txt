@@ -1,16 +1,16 @@
 # source  https://github.com/kenzok8/small-package
 
 
-#CONFIG_PACKAGE_luci-app-statistics=y
-#CONFIG_PACKAGE_luci-app-watchcat=y
+CONFIG_PACKAGE_luci-app-statistics=y
+CONFIG_PACKAGE_luci-app-watchcat=y
 #CONFIG_PACKAGE_luci-app-arpbind=y
 #CONFIG_PACKAGE_luci-app-3cat=y
-#CONFIG_PACKAGE_luci-app-wifischedule=y
+CONFIG_PACKAGE_luci-app-wifischedule=y
 
 
-#CONFIG_PACKAGE_luci-app-ddnsto=y
-#CONFIG_PACKAGE_luci-app-unishare=n
-#CONFIG_PACKAGE_luci-app-timecontrol=y
+CONFIG_PACKAGE_luci-app-ddnsto=y
+CONFIG_PACKAGE_luci-app-unishare=y
+CONFIG_PACKAGE_luci-app-timecontrol=y
 #CONFIG_PACKAGE_luci-app-oaf=n
 
 #流量监控
@@ -27,10 +27,10 @@ CONFIG_PACKAGE_bandix=y
 
 
 #micropyhton 
-#CONFIG_PACKAGE_micropython-lib=y
+CONFIG_PACKAGE_micropython-lib=y
 #CONFIG_PACKAGE_luci-app-banip=y
-#CONFIG_PACKAGE_luci-app-easytier=y
-#CONFIG_PACKAGE_luci-app-mosdns=y
+CONFIG_PACKAGE_luci-app-easytier=y
+CONFIG_PACKAGE_luci-app-mosdns=y
 
 #CONFIG_PACKAGE_luci-app-netspeedtest=n
 
@@ -40,16 +40,16 @@ CONFIG_PACKAGE_bandix=y
 #CONFIG_PACKAGE_luci-app-mwan3helper=y   #MWAN3分流助手
 
 #WOL 唤醒
-#CONFIG_PACKAGE_luci-app-wolplus=y
+CONFIG_PACKAGE_luci-app-wolplus=y
 #CPU频率
 #CONFIG_PACKAGE_luci-app-cpufreq=y
 
 #ram释放
-#CONFIG_PACKAGE_luci-app-ramfree=y
+CONFIG_PACKAGE_luci-app-ramfree=y
 
 #diskman
 #CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=y
-#CONFIG_PACKAGE_luci-app-diskman=y
+CONFIG_PACKAGE_luci-app-diskman=y
 
 #CONFIG_PACKAGE_luci-i18n-filebrowser-go-zh-cn=n
 #CONFIG_PACKAGE_luci-app-filebrowser-go=n
