@@ -54,7 +54,7 @@ UPDATE_PACKAGE() {
 UPDATE_PACKAGE "luci-app-bandix" "timsaya/luci-app-bandix" "main"
 UPDATE_PACKAGE "bandix" "timsaya/openwrt-bandix" "main"
 
-UPDATE_PACKAGE "luci-app-taskplan" "sirpdboy/luci-app-taskplan" "main" "pkg"
+UPDATE_PACKAGE "luci-app-taskplan" "sirpdboy/luci-app-taskplan" "main" "pkg"   #failed!
 UPDATE_PACKAGE "luci-app-nft-timecontrol" "sirpdboy/luci-app-timecontrol" "main" "pkg"
 UPDATE_PACKAGE "luci-app-eqosplus" "sirpdboy/luci-app-eqosplus" "main" 
 UPDATE_PACKAGE "luci-app-watchdog" "sirpdboy/luci-app-watchdog" "main" "pkg"
