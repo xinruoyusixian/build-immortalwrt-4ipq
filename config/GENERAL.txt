@@ -1,11 +1,11 @@
 # source  https://github.com/kenzok8/small-package
 
 
-CONFIG_PACKAGE_luci-app-statistics=y
-CONFIG_PACKAGE_luci-app-watchcat=y
+#CONFIG_PACKAGE_luci-app-statistics=y
+#CONFIG_PACKAGE_luci-app-watchcat=y
 #CONFIG_PACKAGE_luci-app-arpbind=y
 #CONFIG_PACKAGE_luci-app-3cat=y
-CONFIG_PACKAGE_luci-app-wifischedule=y
+#CONFIG_PACKAGE_luci-app-wifischedule=y
 
 
 #CONFIG_PACKAGE_luci-app-ddnsto=y
