@@ -1,17 +1,21 @@
-# source  https://github.com/kenzok8/small-package
 
 
+#no problem
 CONFIG_PACKAGE_luci-app-statistics=y
 CONFIG_PACKAGE_luci-app-watchcat=y
 CONFIG_PACKAGE_luci-app-arpbind=y
-CONFIG_PACKAGE_luci-app-3cat=y
 CONFIG_PACKAGE_luci-app-wifischedule=y
 
 
-CONFIG_PACKAGE_luci-app-ddnsto=y
-CONFIG_PACKAGE_luci-app-unishare=y
+
+#new add
+CONFIG_PACKAGE_luci-app-taskplan=y
 CONFIG_PACKAGE_luci-app-timecontrol=y
-#CONFIG_PACKAGE_luci-app-oaf=n
+CONFIG_PACKAGE_luci-app-eqosplus=y
+CONFIG_PACKAGE_luci-app-watchdog=y
+CONFIG_PACKAGE_luci-app-unishare=y
+CONFIG_PACKAGE_luci-app-ddnsto=y
+
 
 #流量监控
 CONFIG_PACKAGE_luci-app-wrtbwmon=y
@@ -22,16 +26,14 @@ CONFIG_PACKAGE_luci-app-wrtbwmon=y
 CONFIG_PACKAGE_luci-app-bandix=y
 CONFIG_PACKAGE_bandix=y
 
-#CONFIG_PACKAGE_luci-app-tailscale=n
+CONFIG_PACKAGE_luci-app-tailscale=y
 
 
 #micropyhton 
 CONFIG_PACKAGE_micropython-lib=y
-#CONFIG_PACKAGE_luci-app-banip=y
 CONFIG_PACKAGE_luci-app-easytier=y
 CONFIG_PACKAGE_luci-app-mosdns=y
 
-#CONFIG_PACKAGE_luci-app-netspeedtest=n
 
 # Mwan3
 #CONFIG_PACKAGE_mwan3=y
@@ -47,7 +49,6 @@ CONFIG_PACKAGE_luci-app-wolplus=y
 CONFIG_PACKAGE_luci-app-ramfree=y
 
 #diskman
-#CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=y
 CONFIG_PACKAGE_luci-app-diskman=y
 
 #CONFIG_PACKAGE_luci-i18n-filebrowser-go-zh-cn=n
@@ -55,7 +56,6 @@ CONFIG_PACKAGE_luci-app-diskman=y
 
 #文件管理
 CONFIG_PACKAGE_luci-app-filemanager=y
-CONFIG_PACKAGE_luci-i18n-filemanager-zh-cn=y
 
 
 
