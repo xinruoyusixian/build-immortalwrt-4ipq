@@ -54,17 +54,16 @@ UPDATE_PACKAGE() {
 UPDATE_PACKAGE "luci-app-bandix" "timsaya/luci-app-bandix" "main"
 UPDATE_PACKAGE "bandix" "timsaya/openwrt-bandix" "main"
 
-UPDATE_PACKAGE "luci-app-taskplan" "sirpdboy/luci-app-taskplan" "main" "pkg"   #failed!
+UPDATE_PACKAGE "luci-app-taskplan" "xinruoyusixian/alan-package" "main" "pkg"   
 UPDATE_PACKAGE "luci-app-nft-timecontrol" "sirpdboy/luci-app-timecontrol" "main" "pkg"
 UPDATE_PACKAGE "luci-app-eqosplus" "sirpdboy/luci-app-eqosplus" "main" 
 UPDATE_PACKAGE "luci-app-watchdog" "sirpdboy/luci-app-watchdog" "main" "pkg"
 
-UPDATE_PACKAGE "luci-app-unishare" "linkease/nas-packages-luci" "main" "pkg"
-UPDATE_PACKAGE "luci-app-ddnsto" "linkease/nas-packages-luci" "main" "pkg"
-
-UPDATE_PACKAGE "ddnsto" "linkease/nas-packages" "main" "pkg"
-UPDATE_PACKAGE "unishare" "linkease/nas-packages" "main" "pkg"
-UPDATE_PACKAGE "webdav2" "linkease/nas-packages" "main" "pkg"
+UPDATE_PACKAGE "luci-app-unishare" "xinruoyusixian/alan-package" "main" "pkg"
+UPDATE_PACKAGE "luci-app-ddnsto" "xinruoyusixian/alan-package" "main" "pkg"
+UPDATE_PACKAGE "ddnsto" "xinruoyusixian/alan-package" "main" "pkg"
+UPDATE_PACKAGE "unishare" "xinruoyusixian/alan-package" "main" "pkg"
+UPDATE_PACKAGE "webdav2" "xinruoyusixian/alan-package" "main" "pkg"
 
 #更新软件包版本
 UPDATE_VERSION() {
