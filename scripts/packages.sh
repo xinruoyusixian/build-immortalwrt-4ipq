@@ -47,8 +47,11 @@ UPDATE_PACKAGE() {
 # UPDATE_PACKAGE "包名" "项目地址" "项目分支" "pkg/name，可选，pkg为从大杂烩中单独提取包名插件；name为重命名为包名"
 
 
-#UPDATE_PACKAGE "diskman" "lisaac/luci-app-diskman" "master"
-#UPDATE_PACKAGE "qmodem" "FUjr/QModem" "main"
+UPDATE_PACKAGE "diskman" "lisaac/luci-app-diskman" "master"
+UPDATE_PACKAGE "qmodem" "FUjr/QModem" "main"
+
+UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
+UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 
 UPDATE_PACKAGE "argon" "xinruoyusixian/alan-package" "main" "pkg" #自定义主题插件
 
@@ -70,6 +73,8 @@ UPDATE_PACKAGE "ddnsto" "xinruoyusixian/alan-package" "main" "pkg"
 UPDATE_PACKAGE "unishare" "xinruoyusixian/alan-package" "main" "pkg"
 UPDATE_PACKAGE "webdav2" "xinruoyusixian/alan-package" "main" "pkg"
 
+UPDATE_PACKAGE "luci-app-wrtbwmon" "xinruoyusixian/alan-package" "main" "pkg"
+UPDATE_PACKAGE "wrtbwmon" "xinruoyusixian/alan-package" "main" "pkg"
 #更新软件包版本
 UPDATE_VERSION() {
 	local PKG_NAME=$1
