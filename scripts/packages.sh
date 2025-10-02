@@ -58,8 +58,11 @@ UPDATE_PACKAGE "bandix" "timsaya/openwrt-bandix" "main"
 
 UPDATE_PACKAGE "luci-app-taskplan" "xinruoyusixian/alan-package" "main" "pkg"   
 UPDATE_PACKAGE "luci-app-nft-timecontrol" "xinruoyusixian/alan-package" "main" "pkg"
+
 UPDATE_PACKAGE "luci-app-eqosplus" "xinruoyusixian/alan-package" "main"  "pkg"
+
 UPDATE_PACKAGE "luci-app-watchdog" "xinruoyusixian/alan-package" "main" "pkg"
+UPDATE_PACKAGE "watchdog" "xinruoyusixian/alan-package" "main" "pkg"
 
 UPDATE_PACKAGE "luci-app-unishare" "xinruoyusixian/alan-package" "main" "pkg"
 UPDATE_PACKAGE "luci-app-ddnsto" "xinruoyusixian/alan-package" "main" "pkg"
